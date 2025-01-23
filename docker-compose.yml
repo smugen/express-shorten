@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  app:
+    image: express-shorten
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - DB_URI=mongodb://root:mongopassword@mongodb:27017/shorten?authSource=admin
+      - MONGOOSE_DEBUG=true
+      - SHORTEN_LENGTH=5
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mongopassword
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

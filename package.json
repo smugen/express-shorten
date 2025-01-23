@@ -1,0 +1,28 @@
+{
+  "name": "express-shorten",
+  "version": "1.0.0",
+  "description": "A Node.js application using Express and MongoDB",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "nanoid": "^5.0.9"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "prettier-plugin-embed": "^0.4.15"
+  },
+  "author": "CY Wang",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "22.x.x"
+  }
+}
